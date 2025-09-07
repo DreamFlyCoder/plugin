@@ -37,7 +37,7 @@
 1. 微软官方浏览器edge浏览器打开扩展页面(edge://extensions/)
 2. 搜索扩展名称----AI图片生成器
 3. 如不能直接搜索到，可以通过
-https://microsoftedge.microsoft.com/addons/detail/gdnolgpjklmchpmgjloiajnciomlencf地址下载扩展
+https://microsoftedge.microsoft.com/addons/detail/gdnolgpjklmchpmgjloiajnciomlencf 地址下载扩展
 
 ## 使用说明
 
