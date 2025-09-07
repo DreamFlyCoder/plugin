@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "AI图片生成器",
+  "version": "1.0.0",
+  "description": "Transform selected text into AI-generated images using Alibaba Cloud's advanced text-to-image API. Features include intelligent text selection, floating toolbar, customizable image parameters (size, style, quality), collection management, recent generation history, keyboard shortcuts, and responsive design. Supports multiple image styles and sizes up to 1792x1024. Perfect for content creators, designers, and anyone who wants to visualize text concepts instantly.",
+  
+  "browser_specific_settings": {
+    "edge": {
+      "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "AI图片生成器",
+        "default_icon": {
+          "16": "icons/icon16.png",
+          "32": "icons/icon32.png",
+          "48": "icons/icon48.png",
+          "128": "icons/icon128.png"
+        }
+      }
+    }
+  },
+  
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "https://dashscope.aliyuncs.com/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI图片生成器",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html", "settings.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

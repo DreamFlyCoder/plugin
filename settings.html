@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI图片生成器 - 设置</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-container">
+    <!-- 头部 -->
+    <div class="settings-header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="icon">🎨</span>
+          <h1>AI图片生成器</h1>
+        </div>
+        <p class="subtitle">配置您的API设置和插件偏好</p>
+        <p class="subtitle" style="color: #F8BBD0;">（若配置未及时生效，请刷新原网页）</p>
+      </div>
+    </div>
+
+    <!-- 设置内容 -->
+    <div class="settings-content">
+      <!-- 设置标签页 -->
+      <div class="settings-tabs">
+        <button class="tab-btn active" data-tab="api">API配置</button>
+        <button class="tab-btn" data-tab="generation">生成设置</button>
+        <button class="tab-btn" data-tab="interface">界面设置</button>
+                 <button class="tab-btn" data-tab="collection">收藏管理</button>
+      </div>
+
+      <!-- API配置标签页 -->
+      <div class="tab-content active" id="api-tab">
+        <div class="settings-section">
+          <h3>阿里云文生图API配置</h3>
+          <p class="section-description">
+            请配置您的阿里云文生图API密钥。您可以在
+            <a href="https://dashscope.console.aliyun.com/" target="_blank">阿里云控制台</a>
+            获取API密钥。
+          </p>
+          
+          <div class="form-group">
+            <label for="apiKey">API密钥</label>
+            <input type="password" id="apiKey" placeholder="请输入您的阿里云API密钥">
+            <div class="form-help">
+              <span class="icon">🔑</span>
+              您的API密钥将安全存储在本地，不会发送到任何第三方服务器
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="apiUrl">API端点</label>
+            <input type="url" id="apiUrl" placeholder="https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/generation">
+            <div class="form-help">
+              <span class="icon">🌐</span>
+              默认使用阿里云官方API端点，通常无需修改
+            </div>
+          </div>
+
+                                           <div class="form-group">
+             <label for="model">模型名称</label>
+             <select id="model">
+               <option value="wan2.2-t2i-flash">wan2.2-t2i-flash (推荐)</option>
+               <option value="wan2.2-t2i-plus">wan2.2-t2i-plus</option>
+             </select>
+             <div class="form-help">
+               <span class="icon">🤖</span>
+               选择要使用的AI模型，不同模型有不同的生成效果
+             </div>
+           </div>
+
+          <div class="form-actions">
+            <button class="btn primary" id="testApiBtn">
+              <span class="icon">🔧</span>
+              测试API连接
+            </button>
+            <button class="btn secondary" id="saveApiBtn">
+              <span class="icon">💾</span>
+              保存配置
+            </button>
+            <button class="btn danger" id="resetApiBtn">
+              <span class="icon">🔄</span>
+              重置设置
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 生成设置标签页 -->
+      <div class="tab-content" id="generation-tab">
+        <div class="settings-section">
+          <h3>图片生成参数</h3>
+          <p class="section-description">
+            配置图片生成的默认参数，这些设置将影响生成图片的质量和风格。
+          </p>
+
+          <div class="form-group">
+            <label for="imageSize">图片尺寸</label>
+            <select id="imageSize">
+              <option value="1024*1024">1024×1024 (正方形)</option>
+              <option value="1024*1440">1024×1440 (竖版)</option>
+              <option value="1440*1024">1440×1024 (横版)</option>
+              <option value="512*512">512×512 (小正方形)</option>
+              <option value="512*768">512×768 (小竖版)</option>
+              <option value="768*512">768×512 (小横版)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="imageStyle">图片风格</label>
+            <select id="imageStyle">
+              <option value="photographic">写实风格</option>
+              <option value="cartoon">卡通风格</option>
+              <option value="oil-painting">油画风格</option>
+              <option value="watercolor">水彩风格</option>
+              <option value="sketch">素描风格</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="imageQuality">图片质量</label>
+            <select id="imageQuality">
+              <option value="standard">标准质量</option>
+              <option value="hd">高清质量</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="imageCount">生成数量</label>
+            <input type="number" id="imageCount" min="1" max="4" value="1">
+            <div class="form-help">
+              <span class="icon">📊</span>
+              每次生成的图片数量，建议设置为1以获得最佳性能
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" id="saveGenerationBtn">
+              <span class="icon">💾</span>
+              保存设置
+            </button>
+            <button class="btn danger" id="resetGenerationBtn">
+              <span class="icon">🔄</span>
+              重置设置
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 界面设置标签页 -->
+      <div class="tab-content" id="interface-tab">
+        <div class="settings-section">
+          <h3>界面和交互设置</h3>
+          <p class="section-description">
+            自定义插件的界面外观和交互行为。
+          </p>
+
+          <div class="form-group">
+            <label for="toolbarPosition">工具栏位置</label>
+            <select id="toolbarPosition">
+              <option value="auto">自动选择</option>
+              <option value="above">鼠标上方</option>
+              <option value="below">鼠标下方</option>
+              <option value="right">鼠标右侧</option>
+              <option value="left">鼠标左侧</option>
+            </select>
+            <div class="form-help">
+              <span class="icon">📍</span>
+              选择工具栏相对于选中文本的显示位置
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="enableKeyboardShortcuts">
+              <span class="checkmark"></span>
+              启用键盘快捷键
+            </label>
+            <div class="form-help">
+              双击G键快速生成图片（部分浏览器差异可尝试Ctrl+G、Ctrl+Shift+G）
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" id="saveInterfaceBtn">
+              <span class="icon">💾</span>
+              保存设置
+            </button>
+            <button class="btn danger" id="resetInterfaceBtn">
+              <span class="icon">🔄</span>
+              重置设置
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 收藏管理标签页 -->
+      <div id="collection-tab" class="tab-content">
+        <div class="tab-header">
+          <h2>收藏管理</h2>
+          <p>管理您收藏的文本和生成的图片。</p>
+        </div>
+        
+        <div class="action-buttons">
+          <button class="btn secondary" id="exportCollectionBtn">
+            <span class="icon">📤</span>
+            导出收藏
+          </button>
+                      <button class="btn danger" id="clearCollectionBtn">
+              <span class="icon">🗑️</span>
+              清空收藏
+            </button>
+            <button class="btn primary" id="refreshCollectionBtn" style="margin-left: 10px;">
+              <span class="icon">🔄</span>
+              刷新收藏
+            </button>
+        </div>
+        
+        <div class="collection-status" id="collectionStatus">
+          <span class="icon">⭐</span>
+          <span class="status-text">暂无收藏内容</span>
+          <p class="instruction">选中网页文字后点击"收藏"按钮来添加收藏</p>
+        </div>
+        
+        <div class="collection-list" id="collectionList" style="display: none;">
+          <div class="collection-header">
+            <h3>收藏列表 (<span id="collectionCount">0</span>)</h3>
+          </div>
+          <div class="collection-items" id="collectionItems">
+            <!-- 收藏项目将在这里动态生成 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="settings-footer">
+      <div class="footer-content">
+                 <div class="footer-info">
+           <!-- 版本信息已移除 -->
+         </div>
+        <div class="footer-actions">
+          <button class="btn primary" id="closeSettingsBtn">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 隐藏的文件输入 -->
+  <input type="file" id="importFile" accept=".json" style="display: none;">
+
+  <script src="settings.js"></script>
+</body>
+</html>

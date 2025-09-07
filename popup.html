@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI图片生成器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- 头部 -->
+    <div class="popup-header">
+      <div class="logo">
+        <span class="icon">🎨</span>
+        <h1>AI图片生成器</h1>
+      </div>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">已就绪</span>
+      </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="popup-content">
+      <!-- 快速操作 -->
+      <div class="quick-actions">
+        <h3>快速操作</h3>
+        <div class="action-buttons">
+          <button class="action-btn" id="testApiBtn">
+            <span class="icon">🔧</span>
+            测试API连接
+          </button>
+          <button class="action-btn" id="openSettingsBtn">
+            <span class="icon">⚙️</span>
+            打开设置
+          </button>
+        </div>
+      </div>
+
+      <!-- API状态 -->
+      <div class="api-status">
+        <h3>API状态</h3>
+        <div class="status-item">
+          <span class="label">API密钥:</span>
+          <span class="value" id="apiKeyStatus">未配置</span>
+        </div>
+        <div class="status-item">
+          <span class="label">模型:</span>
+          <span class="value" id="modelStatus">wan2.2-t2i-flash</span>
+        </div>
+        <div class="status-item">
+          <span class="label">图片尺寸:</span>
+          <span class="value" id="sizeStatus">1024*1024</span>
+        </div>
+      </div>
+
+      <!-- 使用说明 -->
+      <div class="usage-guide">
+        <h3>使用说明</h3>
+        <div class="guide-steps">
+          <div class="step">
+            <span class="step-number">1</span>
+            <span class="step-text">在网页上选择任意文字</span>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <span class="step-text">点击出现的"生成图片"按钮</span>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <span class="step-text">等待AI生成对应的图片</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 最近生成 -->
+      <div class="recent-generations">
+        <div class="generations-header">
+          <h3>最近生成</h3>
+          <button class="btn-secondary" id="collectionManageBtn">
+            <span class="icon">⭐</span>
+            收藏管理
+          </button>
+        </div>
+        <div class="recent-list" id="recentList">
+          <div class="empty-state" id="emptyState">
+            <span class="icon">📷</span>
+            <p>暂无生成记录</p>
+          </div>
+          <div class="generations-list" id="generationsList" style="display: none;">
+            <!-- 生成记录将在这里动态显示 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
