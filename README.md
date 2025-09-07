@@ -1,6 +1,6 @@
 # AI图片生成器 Chrome插件
 
-一个基于阿里云文生图API的Chrome插件，可以在选中网页文字后生成对应的AI联想图片。
+一个基于阿里云文生图API的Chrome插件，可以在选中网页文字后生成对应的AI联想图片，目前已经发布至edge浏览器公开使用。
 
 ## 功能特性
 
@@ -16,7 +16,14 @@
 
 ## 安装方法
 
-### 方法一：开发者模式安装
+### 方法一：直接安装浏览器扩展
+
+1. 微软官方浏览器edge浏览器打开扩展页面(edge://extensions/)
+2. 搜索扩展名称----AI图片生成器
+3. 如不能直接搜索到，可以通过
+https://microsoftedge.microsoft.com/addons/detail/gdnolgpjklmchpmgjloiajnciomlencf 地址下载扩展
+
+### 方法二：开发者模式安装
 
 1. 下载或克隆本项目到本地
 2. 打开Chrome/Edge浏览器，进入扩展管理页面
@@ -32,12 +39,6 @@
 1. 在扩展管理页面点击"打包扩展程序"
 2. 选择项目文件夹
 3. 生成 `.crx` 文件后拖拽安装
-
-### 方法三：直接安装浏览器扩展
-1. 微软官方浏览器edge浏览器打开扩展页面(edge://extensions/)
-2. 搜索扩展名称----AI图片生成器
-3. 如不能直接搜索到，可以通过
-https://microsoftedge.microsoft.com/addons/detail/gdnolgpjklmchpmgjloiajnciomlencf 地址下载扩展
 
 ## 使用说明
 
