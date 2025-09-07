@@ -33,6 +33,12 @@
 2. 选择项目文件夹
 3. 生成 `.crx` 文件后拖拽安装
 
+### 方法三：直接安装浏览器扩展
+1. 微软官方浏览器edge浏览器打开扩展页面(edge://extensions/)
+2. 搜索扩展名称----AI图片生成器
+3. 如不能直接搜索到，可以通过
+https://microsoftedge.microsoft.com/addons/detail/gdnolgpjklmchpmgjloiajnciomlencf地址下载扩展
+
 ## 使用说明
 
 ### 基本使用
