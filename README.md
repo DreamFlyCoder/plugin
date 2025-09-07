@@ -34,7 +34,7 @@ https://microsoftedge.microsoft.com/addons/detail/gdnolgpjklmchpmgjloiajnciomlen
 5. 选择项目文件夹
 6. 插件安装完成！
 
-### 方法二：打包安装
+### 方法三：打包安装
 
 1. 在扩展管理页面点击"打包扩展程序"
 2. 选择项目文件夹
